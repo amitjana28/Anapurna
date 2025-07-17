@@ -1,0 +1,71 @@
+Angular is a web framework that provides a broad suite of API's, Libraries, and tools to streamline the development workflow. They provide us a solid platform on which we can build fast, reliable applications. This is maintained by dedicated team at google.
+It is basically a typescript based free and open src single page web applications framework.
+
+
+Installation pre-rquisites : Node 20.11.1 or newer; Text Editor (VSCODE); Terminal(for angular CLI commands); Development Tools
+    Step 1 : Install angular CLI gloabally using command "npm install -g @angular/cli"
+    Step 2 : Create new Project using command "ng new <project-name>"
+    Step 3 : Navigate to project directory and run project using command "npm start"
+
+Before Jump into Angualar user should know HTML, CSS, Javascript/typescript
+
+Angualar files and folder structure :
+    package.json :  This file contains meta data of our project like project name, version, dependencies(pacakge required to run in prod environment) and dev dependencies(package required during development and testing phase only), scripts.
+    tsconfig.json : This file contains all the configuration related to typescript used in this project globally.
+    tsconfig.app.json : This file contains all the typescript configuration used by the app folder(Development) or we can say used by the application.
+    tsconfig.spec.jason : This file contains all the typescript configuration used by the spec folder(Testing) or we can say used by the application.
+    angular.json : This file contains all the configuration used by the angular and project like which file will going to load first, from where project execution is going to start
+    src folder : This folder contains the actual code of the project like index.html(first html file), style.css(first css file), main.ts(first typescript file)
+    app folder : This folder contains the actuall application code like components and all
+
+    Step 1 : Our project build and download required things from our config and json files.
+    Step 2 : Go to angular.json file and look which file is need to run 
+    step 3 : Go to main.ts file inside src folder as this is mentioned as entry point of the project in angualar.json file
+    step 4 : Go to app.ts file inside app folder which is inside src folder as this is entry point of our application.
+
+
+Components : 
+    Components are the main building block of the angualar framework. Each Component represents a part of a large webpage.
+    Components has few main parts : @Component Decorator; HTML Template; CSS Selector; Typescript class
+    Example : 
+        // user-profile.ts
+        @Component({
+        selector: 'user-profile',
+        imports: [ProfilePhoto],
+        template: `
+            <h1>User profile</h1>
+            <p>This is the user profile page</p>
+        `,
+        styles: `h1 { font-size: 3em; } `,
+        })
+        export class UserProfile { /* Your component code goes here */ }
+
+    To Import and use a component make sure :
+        Add an entry to the imports array for the component and add an import statement for the component we want to use.
+
+Signals : In angular we use signals to create and manage dynamic data or state. It is a lightweight wrappers around a value. We can use a signal() function to create a signal for holding local state
+
+    Example : 
+        // Create a signal with signal function
+        const appName = signal("Anapurna - food donations app");
+
+        // Print signal 
+        console.log(appName());
+
+        // Update signal using set or update methods
+        appName.set("Anapurna");
+        appName.update(name => name.toUpperCase());
+
+    computed() is a signal that producted its value based in another signal, it is read-only therefore it doesn't have set() or update() methods
+
+        Example : 
+            const user = Signal("Amit");
+            const capsUser = conmputed(()=> user().toUpperCase());
+            console.log(capsUser());
+            console.log(user());
+
+        
+Templates : We use angualar templates syntex to create  dynamic UI. Component template aren't just static html,they can use data from   component class and set up handles for user interactions. A binding creates a dynamic connection between component's template and its data. We can create a binding to show some dynamic text in the template by using double curly braces(Also knows as interpolation)
+
+    In laymen term whenver we need to display data from ts file to html file we use interpolation and whenver we need to execute some js code in html file we use interpolation. 
+    Limitation of interpolation is we can't use for loop or conditions statements directly inside interpolation, can't do ++ or -- , can't assign variable inside interpolation

@@ -1,0 +1,116 @@
+-------> Components are the foundational building blocks for any Angular application. Each component has three parts:
+
+    TypeScript class
+    HTML template
+    CSS styles
+
+    Example : 
+        @Component({
+            selector: 'app-root',
+            template: `
+                Hello
+            `,
+            styles: `
+                :host {
+                color: blue;
+                }
+            `,
+        })
+        export class App {}
+
+
+--------> Updating the component class : In Angular, the component's logic and behavior are defined in the component's TypeScript class. We can add properties in the typescript class like city = 'Faridabad' and used them in html template using {{city}}. This is known as Interpolation.
+
+
+---------> Composing Components : The selector property of the component configuration gives us a name to use when referencing the component in another template. we use the selector like an HTML tag, for example app-user would be <app-user /> in the template.
+
+    Example : In below Example we have a 2 components one is 'app-user' & second is 'app-root'. Now in 'app-root' we display 'app-user' component using importing 'app-user' typescript class name as User and selector 'app-user' as html tag in template 
+        import {Component} from '@angular/core';
+
+        @Component({
+        selector: 'app-user',
+        template: `
+            Username: {{ username }}
+        `,
+        })
+        export class User {
+        username = 'youngTech';
+        }
+
+
+        @Component({
+        selector: 'app-root',
+        template: `<app-user/>`,
+        imports: [User],
+        })
+        export class App {}
+
+
+----------> Control Flow in Components(@if & @else) : To express conditional displays in templates, Angular uses the @if & @else template syntax.
+    Example : 
+        @Component({
+            Selector : 'logged-in',
+            template: `
+                @if (isLoggedIn) {
+                <p>Welcome back, Friend!</p>
+                } @else {
+                    <span> Invalid Credentials </span>
+                }
+            `,
+            })
+            class App {
+                isLoggedIn = true;
+            }
+
+----------> Control Flow in Components(@for) : Often when building web applications, we need to repeat some code a specific number of times - for example, given an array of names, you may want to display each name in a <p> tag.
+
+    Example : 
+        @Component({
+            ...
+            template: `
+                @for (os of operatingSystems; track os.id) {
+                    {{ os.name }}
+                }
+            `,
+            })
+        export class App {
+            operatingSystems = [
+                {id: 'win', name: 'Windows'}, 
+                {id: 'osx', name: 'MacOS'}, 
+                {id: 'linux', name: 'Linux'}
+            ];
+        }
+
+
+--------------> Property Binding in angular : Property binding in Angular enables you to set values for properties of HTML elements, Angular components and more. Use property binding to dynamically set values for properties and attributes. You can do things such as toggle button features, set image paths programmatically, and share values between components.
+
+To bind to an element's attribute, wrap the attribute name in square brackets. 
+    Example:
+        import {Component} from '@angular/core';
+
+        @Component({
+        selector: 'app-root',
+        styleUrls: ['app.css'],
+        template: `
+            <img alt="photo" [src]="imageURL">
+            <div [contentEditable]="isEditable"></div>
+        `,
+        })
+        export class App {
+            isEditable = true
+            imageURL = 'C://res/dogpic.jpg'
+        }
+
+----------> Event Handling : Event handling enables interactive features on web apps. It gives you the ability as a developer to respond to user actions like button presses, form submissions and more.
+In Angular you bind to events with the parentheses syntax (). On a given element, wrap the event you want to bind to with parentheses and set an event handler
+    
+    Example : 
+        @Component({
+            ...
+            template: `<button (click)="greet()">`
+        })
+        class App {
+            greet() {
+                console.log('Hello, there 👋');
+            }
+        }
