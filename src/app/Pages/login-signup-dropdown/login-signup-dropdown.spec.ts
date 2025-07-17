@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReceiverLogin } from './receiver-login';
+import { LoginSignupDropdown } from './login-signup-dropdown';
 
-describe('ReceiverLogin', () => {
-  let component: ReceiverLogin;
-  let fixture: ComponentFixture<ReceiverLogin>;
+describe('LoginSignupDropdown', () => {
+  let component: LoginSignupDropdown;
+  let fixture: ComponentFixture<LoginSignupDropdown>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ReceiverLogin]
+      imports: [LoginSignupDropdown]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ReceiverLogin);
+    fixture = TestBed.createComponent(LoginSignupDropdown);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { LoginSignupDropdown } from '../login-signup-dropdown/login-signup-dropdown';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink],
+  imports: [RouterLink, LoginSignupDropdown],
   templateUrl: './navbar.html',
   styleUrl: './navbar.css'
 })

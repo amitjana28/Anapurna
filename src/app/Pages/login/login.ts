@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { DonerLogin } from '../doner-login/doner-login';
-import { ReceiverLogin } from '../receiver-login/receiver-login';
 
 @Component({
   selector: 'app-login',
-  imports: [DonerLogin,ReceiverLogin],
+  imports: [],
   templateUrl: './login.html',
   styleUrl: './login.css'
 })

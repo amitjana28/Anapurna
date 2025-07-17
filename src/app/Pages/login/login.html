@@ -1,4 +1,27 @@
-<div style="display: flex; justify-content: center; gap: 40px; padding: 40px;">
-  <app-doner-login></app-doner-login>
-  <app-receiver-login></app-receiver-login>
+<div class="login-container">
+  <h2>Login as Donor</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input id="username" type="text" placeholder="Enter username" />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Enter password" />
+    </div>
+
+    <button type="button" class="submit-btn">Login</button>
+  </form>
+
+  <button class="google-btn">
+    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
+    Login with Google
+  </button>
+
+  <div class="links">
+    <a href="#">Forgot password?</a> |
+    <a href="#">Register as new donor</a>
+  </div>
 </div>
