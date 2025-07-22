@@ -1,0 +1,31 @@
+We use Interpolation to bind a componant property, methods or to a template referance variable to the string linteral into the view. It is one way data binding from Componant-to-view.
+The expression must result in a string. If it return object it will not work. If we want to bind the expression that is other then a string , then Property binding is best option.
+Interpolation and property binding can set only on properties not on attributes.
+
+Exaples of interpolation : 
+    Invoking the Componants methods
+    Concatinate two strings
+    Perform some mathematical operations
+    Bind the property of html elements, componant or directives. We can any properties that accets a strings
+    Use a template referance variable
+    Cross-site scrippting or XSS
+    NgNonBindable
+    Use pipes
+    The safe navigation operator(?)
+    The non null assertion operator
+
+Example : 
+    app.ts --> Componant files
+
+        export class App{
+            title = "My Title"
+            fname = "Amit"
+            lname = "Jana"
+            fullName() {
+                return this.fname+this.lname;
+            }
+        }
+
+    app.html --> Template files
+        <h1> {{title}} </h1>
+        <p> My Full name is {{fullName()}} </p>

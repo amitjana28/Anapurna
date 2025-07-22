@@ -1,0 +1,13 @@
+Angular Components are the main building block of the application. Componants contains data and UI logics that defines how View looks and behaves.
+
+Angular Componants are plain js classes define using @componant decorator. Componant responsible for providing data with the view to displayed.
+
+Angular using data binding to share data from componant to the view and vice versa. The componant can also get notified when the view changes.
+
+Componant consits 3 main building blocks : Templates,   Class,  MetaData
+
+    Templates : It defines the layout and content of the View. We can add directives, pipes & other Angular comonnets on the templates. The data  to templates comes from Componants which get it from an angular service. The template can use Event and 2-way binding to notify the component when user changes something into the view.
+
+    Classes : It provides the data and logic to the view. It contains properties and methods.
+
+    Metadata : It provides additional info about the Componants. Important metadata properties of the Componants are Selector, Providers, Directives, StylesUrl and templateUrl

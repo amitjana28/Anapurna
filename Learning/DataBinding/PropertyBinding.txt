@@ -1,0 +1,37 @@
+Property binding is one way from component to view. It let us set the property of an element in the view to property in the component.
+We can also use this to set the properties of the custom componants or derivatives(Properties decorated with @Input)
+
+Syntex : [Binding-target]="binding src"
+
+Example : <button [disabled]="isDisabled"> This is disabled button </button>
+
+The Property binding binds to the properties of the DOM element, compnents and directives and not to HTML attributes.
+
+
+
+
+Class Binding : We can set the class in below ways
+    --> ClassName Property binding : ClassName is the property name of HTML element. 
+        Example : <div [ClassName]="'username'">Test Username </div>
+                  <div [ClassName]="'username uname'"> More class names using space seperated</div>
+
+   -->  HTML Class attributes : We can use class using normal html way. Mixing both class and [ClassName] result in removal of class attribute
+        Example : <div class='username'>This is normal HTML way of adding class</div>
+
+    --> Class binding with class : There is a shorthand way to bind css class to html element.
+        Example : <div [class.<classname>]="condition"></div>
+                Where <classname> is the name of class and condition is true or false value, true adds the class and false removes the class
+
+    --> Class binding with NgClass : 
+    
+
+
+
+Style binding : 
+    Syntex : [style.style-property]="style-value"
+    Example : <div [style.color]="'red'"> This is red</div>
+
+
+Sttribute Binding : 
+    Syntex : [attr.<attribute-name]="attribute-value"
+    Example : <button [attr.aria-label]="closeLabel" (onclick)="CloseMe()"> Submit </button>

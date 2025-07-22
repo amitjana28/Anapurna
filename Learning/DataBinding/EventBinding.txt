@@ -1,0 +1,12 @@
+Event binding is a one way binding from view-to-compnent. We use it to perform an action in the components when the user performs an action like click on button, changing the inputs etc in the view.
+
+Syntex : (target-event)="TemplateStatements"
+
+Example : <button (click)="clickCount()"> Count </button>
+          <button on-click="clickCount()"> Count </button>
+
+Multiple Event Handlers : We can also bind an unlimited number of event handlers on the same event by seperating them with a semicolon
+    Example : <button on-click="clickMe(); clickCount1=clickCount"> Count </button>
+
+$event Payload : 
+    
