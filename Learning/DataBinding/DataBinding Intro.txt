@@ -1,0 +1,9 @@
+Data Binding is a technique, where the data stays in sync between componant and view. Whenever user update the view angular updates the componant and Whenever compnent gets the new data, the angular updates the view.
+
+In angular there are 2 types of data binding : one way data binding and two way data binding
+
+One Way data binding : Data Flow from one direction either from Componant-to-view or from view-to-componant
+    From Componant-to-view : Interpolation, Property Binding, Class Binding, Style Binding, Attribute Binding
+    From View-to-Componant : Event Binding
+    
+Two way Data Binding : It means changes made to the model of the components are propogated to the view and that any changes made in the view are imidiately updated in the underlaying components.

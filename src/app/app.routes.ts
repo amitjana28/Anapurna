@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeContent } from './Pages/home-content/home-content';
 import { Login } from './Pages/login/login';
-import { Signup } from './signup/signup';
+import { Signup } from './Pages/signup/signup';
 
 export const routes: Routes = [
     {
