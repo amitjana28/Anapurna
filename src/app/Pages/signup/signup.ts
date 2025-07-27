@@ -8,5 +8,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './signup.css'
 })
 export class Signup {
-  
+  signupPageTitle: string = 'Signup';
 }

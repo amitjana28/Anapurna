@@ -1,11 +1,19 @@
-<div class="dropdown">
+<div class="dropdown" *ngIf="isHomePage === true">
   <button class="dropdown-btn">Login / Signup</button>
   <ul class="dropdown-menu">
     <li class="dropdown-submenu">
-      <span routerLink="login">Login</span>
+      <span routerLink="login" (click)="switchOption()">Login</span>
     </li>
     <li class="dropdown-submenu">
-      <span routerLink="signup">Signup</span>
+      <span routerLink="signup" (click)="switchOption()">Signup</span>
     </li>
   </ul>
+</div>
+
+<div class="dropdown" *ngIf="isLogin === false && isHomePage === false">
+  <button class="dropdown-btn" routerLink="signup" (click)="switchOption()"> Signup</button>
+</div>
+
+<div class="dropdown" *ngIf="isSignup === false && isHomePage === false">
+  <button class="dropdown-btn" routerLink="login" (click)="switchOption()"> Login</button>
 </div>
